@@ -1,0 +1,35 @@
+Step 1: Runtime Analysis
+
+
+Tiny Array (10)
+insert 47.674 μs
+append 128.28 μs
+
+Small Array (100)
+insert 65.128 μs
+append 133.418 μs
+
+Medium Array (1000)
+insert 221.501 μs
+append 192.081 μs
+
+Large Array (10000)
+insert 18.677801 ms
+append 817.684 μs
+
+Extra Large Array (100000)
+insert 1.759595702 s
+append 4.153676 ms
+
+
+The pattern i see after running both functions is that for numbers of elements 
+in array 10-100, push() scales better with O(1) time complexity. For array of numbers between 1000-100000
+i see the opposite pattern. In conclusion, smaller arrays are scaled better using push(), and unshift()
+scales better in array 1000-100000. 
+
+After i research both methods, push() is better to use with larger arrays, because it does not require additional memory,
+and unshift() does require additional memory to shift elements around and add an element to the beginning of an array. 
+
+However, the data above does not completely correlate with research findings. I also found out that sometimes you need to 
+use unshift() for better logic even though it may not scale as well for very large arrays.
+
